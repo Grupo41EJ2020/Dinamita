@@ -4,13 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Pia Desarrollo de Software</title>
+    <title>Menú Empleado</title>
 </head>
 <body>
-    <h1>Bienvenidos al PIA del equipo DINAMITA</h1>
-    <h2>    PIA 👍 </h2>
-
-    <a href="/Empleado/Index">Empleado</a>
-  
+    <h1>Menú Empleados</h1>
+    <br />
+    <a href="/Empleado/ConsultarTodo">Ver Empleados</a>
+    <br />
+    <a href="/Home/Index">Regresar </a>
 </body>
 </html>
