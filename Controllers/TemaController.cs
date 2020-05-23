@@ -12,24 +12,11 @@ namespace MVCLaboratorio.Controllers
 {
     public class TemaController : Controller
     {
-        //
-        // GET: /Tema/
+        RepositorioTema reproTema = new RepositorioTema();
 
         public ActionResult Index()
         {
-            DataTable dtTemas = BaseHelper.ejecutarConsulta("sp_Tema_ConsultarTodo", CommandType.StoredProcedure);
-            List<Tema> Isttemas = new List<Tema>();
-
-            foreach (DataRow item in dtTemas.Rows)
-            {
-                Tema datosTemas = new Tema();
-                datosTemas.IdTema = int.Parse(item["IdTema"].ToString());
-                datosTemas.Nombre = item["Nombre"].ToString();
-
-                Isttemas.Add(datosTemas);
-            }
-            
-            return View(Isttemas);
+            return View(reproTema.ObtenerTema());
         }
         public ActionResult Create()
         { 
@@ -38,94 +25,33 @@ namespace MVCLaboratorio.Controllers
         [HttpPost]
         public ActionResult Create(string Nombre)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-
-            parametros.Add(new SqlParameter("@Nombre", Nombre));
-
-
-            BaseHelper.ejecutarSentencia("sp_Tema_Insertar", CommandType.StoredProcedure, parametros);
-
+            reproTema.insertarTema(Nombre);
             return RedirectToAction("Index", "Tema");
         }
         public ActionResult Details(int id)
         {
-            
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdTema", id));
-            DataTable dttema = BaseHelper.ejecutarConsulta("sp_Tema_ConsultarPorID", CommandType.StoredProcedure, parametros);
-            Tema ttema = new Tema();
-            if (dttema.Rows.Count > 0)
-            {
-                ttema.IdTema = int.Parse(dttema.Rows[0]["IdTema"].ToString());
-                ttema.Nombre = dttema.Rows[0]["Nombre"].ToString();
-
-                return View(ttema);
-            }
-            else
-            {
-                return View("Error no es posible mostrar los datos");
-            }
-
+            return View(reproTema.ObtenerTema(id));
         }
         public ActionResult Edit(int id)
         {
-
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdTema", id));
-            DataTable dttema = BaseHelper.ejecutarConsulta("sp_Tema_ConsultarPorID", CommandType.StoredProcedure, parametros);
-            Tema ttema = new Tema();
-            if (dttema.Rows.Count > 0)
-            {
-                ttema.IdTema = int.Parse(dttema.Rows[0]["IdTema"].ToString());
-                ttema.Nombre = dttema.Rows[0]["Nombre"].ToString();
-
-                return View(ttema);
-            }
-            else
-            {
-                return View("Error no Existe");
-            }
-
+            return View(reproTema.ObtenerTema(id));
         }
         [HttpPost]
         public ActionResult Edit(int id, Tema datos)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdTema", id));
-            parametros.Add(new SqlParameter("@Nombre", datos.Nombre));
-
-
-            BaseHelper.ejecutarConsulta("sp_Tema_Actualizar", CommandType.StoredProcedure, parametros);
+            datos.IdTema = id;
+            reproTema.actualizarTema(datos);
             return RedirectToAction("Index", "Tema");
-
 
         }
         public ActionResult Delete(int id)
         {
-            
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdTema", id));
-            DataTable dttema = BaseHelper.ejecutarConsulta("sp_Tema_ConsultarPorID", CommandType.StoredProcedure, parametros);
-            Tema ttema = new Tema();
-            if (dttema.Rows.Count > 0)
-            {
-                ttema.IdTema = int.Parse(dttema.Rows[0]["IdTema"].ToString());
-                ttema.Nombre = dttema.Rows[0]["Nombre"].ToString();
-
-                return View(ttema);
-            }
-            else
-            {
-                return View("Error, intentalo de nuevo");
-            }
-
+            return View(reproTema.ObtenerTema(id));
         }
         [HttpPost]
         public ActionResult Delete(int id, FormCollection frm)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdTema", id));
-            BaseHelper.ejecutarConsulta("sp_Tema_Eliminar", CommandType.StoredProcedure, parametros);
+            reproTema.eliminarTema(id);
             return RedirectToAction("Index", "Tema");
 
 
