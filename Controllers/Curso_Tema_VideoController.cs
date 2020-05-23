@@ -116,6 +116,20 @@ namespace MVCLaboratorio.Controllers
             BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_Actualizar", CommandType.StoredProcedure, parametros);
             return RedirectToAction("ConsultarTodo");
         }
-        
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(int IdCT, int IdVideo)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdCT", IdCT));
+            parametros.Add(new SqlParameter("@IdVideo", IdVideo));
+
+            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_Insertar", CommandType.StoredProcedure, parametros);
+
+            return RedirectToAction("ConsultarTodo");
+        }
     }
 }
