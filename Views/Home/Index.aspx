@@ -11,6 +11,8 @@
     <h2>    PIA 👍 </h2>
 
     <a href="/Empleado/Index">Empleado</a>
+    <br />
+     <a href="/Tema/Index">Temas</a>
     
    
   
