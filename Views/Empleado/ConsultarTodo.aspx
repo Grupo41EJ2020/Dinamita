@@ -49,7 +49,7 @@
     </p>
 
     <p>
-        <%: Html.ActionLink("Regresar", "Index") %>
+        <a href="/Home/Index">Regresar</a>
     </p>
 
 </body>

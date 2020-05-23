@@ -4,13 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Menú Empleado</title>
+    <title>Error</title>
 </head>
 <body>
-    <h1>Menú Empleados</h1>
-    <br />
-    <a href="/Empleado/ConsultarTodo">Ver Empleados</a>
-    <br />
-    <a href="/Home/Index">Regresar </a>
+    <h1> No se puede procesar su solicitud </h1>
 </body>
 </html>
