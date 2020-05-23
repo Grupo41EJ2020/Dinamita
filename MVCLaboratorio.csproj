@@ -90,7 +90,9 @@
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Tema\Create.aspx" />
+    <Content Include="Views\Tema\Delete.aspx" />
     <Content Include="Views\Tema\Details.aspx" />
+    <Content Include="Views\Tema\Edit.aspx" />
     <Content Include="Views\Tema\Index.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
