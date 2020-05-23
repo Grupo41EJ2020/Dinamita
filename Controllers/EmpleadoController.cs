@@ -61,9 +61,79 @@ namespace MVCLaboratorio.Controllers
             else
             {
                 return View("Error");
+            }           
+        }
+
+        public ActionResult Delete(int id)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdEmpleado", id));
+
+            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_Empleado_ConsultarPorID", CommandType.StoredProcedure, parametros);
+
+            Empleado miEmpleado = new Empleado();
+
+            if (dtEmpleado.Rows.Count > 0)
+            {
+                miEmpleado.IdEmpleado = int.Parse(dtEmpleado.Rows[0]["IdEmpleado"].ToString());
+                miEmpleado.Nombre = dtEmpleado.Rows[0]["Nombre"].ToString();
+                miEmpleado.Direccion = dtEmpleado.Rows[0]["Direccion"].ToString();
+                return View(miEmpleado);
             }
 
-            
+            else
+            {
+                return View("Error");
+            }    
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection frm)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdEmpleado", id));
+
+            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_Empleado_Eliminar", CommandType.StoredProcedure, parametros);
+
+
+            return RedirectToAction("ConsultarTodo");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdEmpleado", id));
+
+            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_Empleado_ConsultarPorID", CommandType.StoredProcedure, parametros);
+
+            Empleado miEmpleado = new Empleado();
+
+            if (dtEmpleado.Rows.Count > 0)
+            {
+                miEmpleado.IdEmpleado = int.Parse(dtEmpleado.Rows[0]["IdEmpleado"].ToString());
+                miEmpleado.Nombre = dtEmpleado.Rows[0]["Nombre"].ToString();
+                miEmpleado.Direccion = dtEmpleado.Rows[0]["Direccion"].ToString();
+                return View(miEmpleado);
+            }
+
+            else
+            {
+                return View("Error");
+            }    
+   
+        }
+        [HttpPost]
+        public ActionResult Edit(int id, Empleado datos)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdEmpleado", id));
+            parametros.Add(new SqlParameter("@Nombre", datos.Nombre));
+            parametros.Add(new SqlParameter("@Direccion", datos.Direccion));
+
+            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_Empleado_Actualizar", CommandType.StoredProcedure, parametros);
+
+            return RedirectToAction("ConsultarTodo");
+
         }
     }
 }
