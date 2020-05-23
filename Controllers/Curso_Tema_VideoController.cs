@@ -38,5 +38,24 @@ namespace MVCLaboratorio.Controllers
             return View(IstCurso_Tema_Video);
 
         }
+        public ActionResult Details(int id)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdCTV", id));
+            DataTable dtCurso_Tema_Video = BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_ConsultarPorID", CommandType.StoredProcedure, parametros);
+            Curso_Tema_Video miCurso_Tema_Video = new Curso_Tema_Video();
+            if (dtCurso_Tema_Video.Rows.Count > 0)
+            {
+                miCurso_Tema_Video.IdCTV = int.Parse(dtCurso_Tema_Video.Rows[0]["IdCTV"].ToString());
+                miCurso_Tema_Video.IdCT = int.Parse(dtCurso_Tema_Video.Rows[0]["IdCT"].ToString());
+                miCurso_Tema_Video.IdVideo = int.Parse(dtCurso_Tema_Video.Rows[0]["IdVideo"].ToString());
+                return View(miCurso_Tema_Video);
+            }
+            else
+            {
+                return View("ERROR");
+            }
+
+        }
     }
 }

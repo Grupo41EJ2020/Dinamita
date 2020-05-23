@@ -13,12 +13,7 @@
             <th>
                 IdCTV
             </th>
-            <th>
-                IdCT
-            </th>
-            <th>
-                IdVideo
-            </th>
+
         </tr>
 
     <% foreach (var item in Model) { %>
@@ -32,12 +27,7 @@
             <td>
                 <%: item.IdCTV %>
             </td>
-            <td>
-                <%: item.IdCT %>
-            </td>
-            <td>
-                <%: item.IdVideo %>
-            </td>
+
         </tr>
     
     <% } %>
