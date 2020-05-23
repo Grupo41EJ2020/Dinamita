@@ -89,7 +89,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Curso_Tema_Video\ConsultarTodo.aspx" />
+    <Content Include="Views\Curso_Tema_Video\Delete.aspx" />
     <Content Include="Views\Curso_Tema_Video\Details.aspx" />
+    <Content Include="Views\Curso_Tema_Video\Edit.aspx" />
     <Content Include="Views\Empleado\Create.aspx" />
     <Content Include="Views\Empleado\Delete.aspx" />
     <Content Include="Views\Empleado\Details.aspx" />

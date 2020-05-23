@@ -55,7 +55,67 @@ namespace MVCLaboratorio.Controllers
             {
                 return View("ERROR");
             }
+        }
+            public ActionResult Delete(int id)
+             {
+           List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdCTV", id));
+            DataTable dtCurso_Tema_Video = BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_ConsultarPorID", CommandType.StoredProcedure, parametros);
+            Curso_Tema_Video miCurso_Tema_Video = new Curso_Tema_Video();
+            if (dtCurso_Tema_Video.Rows.Count > 0)
+            {
+                miCurso_Tema_Video.IdCTV = int.Parse(dtCurso_Tema_Video.Rows[0]["IdCTV"].ToString());
+                miCurso_Tema_Video.IdCT = int.Parse(dtCurso_Tema_Video.Rows[0]["IdCT"].ToString());
+                miCurso_Tema_Video.IdVideo = int.Parse(dtCurso_Tema_Video.Rows[0]["IdVideo"].ToString());
+                return View(miCurso_Tema_Video);
+            }
+            else
+            {
+                return View("ERROR");
+            }
 
         }
+
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection frm)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdCTV", id));
+
+            BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_Eliminar", CommandType.StoredProcedure, parametros);
+            return RedirectToAction("ConsultarTodo");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdCTV", id));
+            DataTable dtCurso_Tema_Video = BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_ConsultarPorID", CommandType.StoredProcedure, parametros);
+            Curso_Tema_Video miCurso_Tema_Video = new Curso_Tema_Video();
+            if (dtCurso_Tema_Video.Rows.Count > 0)
+            {
+                miCurso_Tema_Video.IdCTV = int.Parse(dtCurso_Tema_Video.Rows[0]["IdCTV"].ToString());
+                miCurso_Tema_Video.IdCT = int.Parse(dtCurso_Tema_Video.Rows[0]["IdCT"].ToString());
+                miCurso_Tema_Video.IdVideo = int.Parse(dtCurso_Tema_Video.Rows[0]["IdVideo"].ToString());
+                return View(miCurso_Tema_Video);
+            }
+            else
+            {
+                return View("ERROR");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, Curso_Tema_Video datos)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdCTV", id));
+            parametros.Add(new SqlParameter("@IdCT", datos.IdCT));
+            parametros.Add(new SqlParameter("@IdVideo", datos.IdVideo));
+
+            BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_Actualizar", CommandType.StoredProcedure, parametros);
+            return RedirectToAction("ConsultarTodo");
+        }
+        
     }
 }
