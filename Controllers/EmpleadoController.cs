@@ -18,7 +18,22 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            //Obtener todos los Empleados
+            DataTable dtEmpleados = BaseHelper.ejecutarConsulta("sp_Empleado_ConsultarTodo", CommandType.StoredProcedure);
+
+            List<Empleado> lstEmpleados = new List<Empleado>();
+
+            foreach (DataRow item in dtEmpleados.Rows)
+            {
+                Empleado datosEmpleado= new Empleado();
+                datosEmpleado.IdEmpleado = int.Parse(item["IdEmpleado"].ToString());
+                datosEmpleado.Nombre = item["Nombre"].ToString();
+                datosEmpleado.Direccion = item["Direccion"].ToString();
+
+                lstEmpleados.Add(datosEmpleado);           
+            }
+
+            return View(lstEmpleados);
         }
 
         public ActionResult ConsultarTodo()
@@ -96,7 +111,7 @@ namespace MVCLaboratorio.Controllers
             DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_Empleado_Eliminar", CommandType.StoredProcedure, parametros);
 
 
-            return RedirectToAction("ConsultarTodo");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edit(int id)
@@ -132,8 +147,25 @@ namespace MVCLaboratorio.Controllers
 
             DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_Empleado_Actualizar", CommandType.StoredProcedure, parametros);
 
-            return RedirectToAction("ConsultarTodo");
+            return RedirectToAction("Index");
+        }
+        
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(  string Nombre, string Direccion)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
 
+           
+            parametros.Add(new SqlParameter("@Nombre",Nombre ));
+            parametros.Add(new SqlParameter("@Direccion", Direccion));
+
+            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_Empleado_Insertar", CommandType.StoredProcedure, parametros);
+
+            return RedirectToAction("Index");
         }
     }
 }

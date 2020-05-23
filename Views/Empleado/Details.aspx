@@ -23,8 +23,7 @@
     <p>
         <%: Html.ActionLink("Editar ", "Edit", new {id=Model.IdEmpleado}) %> |
        
-        <a href="/Empleado/ConsultarTodo">Regresar a la lista</a>
-       
+        <%:Html.ActionLink("Regresar a la lista", "Index") %>
     </p>
 
 </body>

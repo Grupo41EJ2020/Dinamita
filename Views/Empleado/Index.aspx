@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Información de Empleados</title>
+    <title>Consultar Empleados</title>
 </head>
 <body>
     <table>
@@ -25,9 +25,9 @@
     
         <tr>
             <td>
-                <%: Html.ActionLink("Editar", "Edit", new {id=item.IdEmpleado}) %> |
-                <%: Html.ActionLink("Ver Detalles", "Details", new {id=item.IdEmpleado})%> |
-                <%: Html.ActionLink("Borrar", "Delete", new { id=item.IdEmpleado})%>
+                <%: Html.ActionLink("Editar", "Edit", new { id=item.IdEmpleado }) %> |
+                <%: Html.ActionLink("Ver Detalles", "Details", new {id=item.IdEmpleado })%> |
+                <%: Html.ActionLink("Borrar", "Delete", new {id=item.IdEmpleado })%>
             </td>
             <td>
                 <%: item.IdEmpleado %>
@@ -46,10 +46,6 @@
 
     <p>
         <%: Html.ActionLink("Crear Nuevo Empleado", "Create") %>
-    </p>
-
-    <p>
-        <a href="/Home/Index">Regresar</a>
     </p>
 
 </body>

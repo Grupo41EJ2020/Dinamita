@@ -4,14 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Editar información Empleado</title>
+    <title>Crear Nuevo Empleado</title>
 </head>
 <body>
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
-        
+
         <fieldset>
-            <legend>Datos de Empleado</legend>
+            <legend>Ingrese datos del Empleado</legend>
+            
             
             
             <div class="editor-label">
@@ -31,14 +32,14 @@
             </div>
             
             <p>
-                <input type="submit" value="Guardar" />
+                <input type="submit" value="Crear" />
             </p>
         </fieldset>
 
     <% } %>
 
     <div>
-         <%:Html.ActionLink("Regresar a la lista", "Index") %>
+        <%: Html.ActionLink("Regresar a la lista", "Index") %>
     </div>
 
 </body>

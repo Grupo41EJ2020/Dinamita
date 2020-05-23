@@ -10,7 +10,7 @@
     <h1>Bienvenidos al PIA del equipo DINAMITA</h1>
     <h2>    PIA 👍 </h2>
 
-    <a href="/Empleado/ConsultarTodo">Empleado</a>
+    <a href="/Empleado/Index">Empleado</a>
     
    
   
