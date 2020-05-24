@@ -13,8 +13,7 @@ namespace MVCLaboratorio.Controllers
 {
     public class Curso_Tema_VideoController : Controller
     {
-        //
-        // GET: /Curso_Tema_Video/
+        RepositorioCurso_Tema_Video RepoCursoTemaVideo =new RepositorioCurso_Tema_Video();
 
         public ActionResult Index()
         {
@@ -23,97 +22,39 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult ConsultarTodo()
         {
-
-            DataTable dtCurso_Tema_Video = BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_ConsultarTodo", CommandType.StoredProcedure);
-            List<Curso_Tema_Video> IstCurso_Tema_Video = new List<Curso_Tema_Video>();
-
-            foreach (DataRow item in dtCurso_Tema_Video.Rows)
-            {
-                Curso_Tema_Video datosCurso_Tema_Video = new Curso_Tema_Video();
-                datosCurso_Tema_Video.IdCTV = int.Parse(item["IdCTV"].ToString());
-                datosCurso_Tema_Video.IdCT = int.Parse(item["IdCT"].ToString());
-                datosCurso_Tema_Video.IdVideo = int.Parse(item["IdVideo"].ToString());
-                IstCurso_Tema_Video.Add(datosCurso_Tema_Video);
-            }
-            return View(IstCurso_Tema_Video);
+           
+            return View(RepoCursoTemaVideo.obtenerCurso_Tema_Video());
 
         }
+
         public ActionResult Details(int id)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdCTV", id));
-            DataTable dtCurso_Tema_Video = BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_ConsultarPorID", CommandType.StoredProcedure, parametros);
-            Curso_Tema_Video miCurso_Tema_Video = new Curso_Tema_Video();
-            if (dtCurso_Tema_Video.Rows.Count > 0)
-            {
-                miCurso_Tema_Video.IdCTV = int.Parse(dtCurso_Tema_Video.Rows[0]["IdCTV"].ToString());
-                miCurso_Tema_Video.IdCT = int.Parse(dtCurso_Tema_Video.Rows[0]["IdCT"].ToString());
-                miCurso_Tema_Video.IdVideo = int.Parse(dtCurso_Tema_Video.Rows[0]["IdVideo"].ToString());
-                return View(miCurso_Tema_Video);
-            }
-            else
-            {
-                return View("ERROR");
-            }
+            return View (RepoCursoTemaVideo.obtenerCurso_Tema_Video(id));
         }
-            public ActionResult Delete(int id)
-             {
-           List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdCTV", id));
-            DataTable dtCurso_Tema_Video = BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_ConsultarPorID", CommandType.StoredProcedure, parametros);
-            Curso_Tema_Video miCurso_Tema_Video = new Curso_Tema_Video();
-            if (dtCurso_Tema_Video.Rows.Count > 0)
-            {
-                miCurso_Tema_Video.IdCTV = int.Parse(dtCurso_Tema_Video.Rows[0]["IdCTV"].ToString());
-                miCurso_Tema_Video.IdCT = int.Parse(dtCurso_Tema_Video.Rows[0]["IdCT"].ToString());
-                miCurso_Tema_Video.IdVideo = int.Parse(dtCurso_Tema_Video.Rows[0]["IdVideo"].ToString());
-                return View(miCurso_Tema_Video);
-            }
-            else
-            {
-                return View("ERROR");
-            }
+        
+        public ActionResult Delete(int id)
+        {
+            return View(RepoCursoTemaVideo.obtenerCurso_Tema_Video(id));
 
         }
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection frm)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdCTV", id));
-
-            BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_Eliminar", CommandType.StoredProcedure, parametros);
+            RepoCursoTemaVideo.eliminarCurso_Tema_Video(id);
             return RedirectToAction("ConsultarTodo");
         }
 
         public ActionResult Edit(int id)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdCTV", id));
-            DataTable dtCurso_Tema_Video = BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_ConsultarPorID", CommandType.StoredProcedure, parametros);
-            Curso_Tema_Video miCurso_Tema_Video = new Curso_Tema_Video();
-            if (dtCurso_Tema_Video.Rows.Count > 0)
-            {
-                miCurso_Tema_Video.IdCTV = int.Parse(dtCurso_Tema_Video.Rows[0]["IdCTV"].ToString());
-                miCurso_Tema_Video.IdCT = int.Parse(dtCurso_Tema_Video.Rows[0]["IdCT"].ToString());
-                miCurso_Tema_Video.IdVideo = int.Parse(dtCurso_Tema_Video.Rows[0]["IdVideo"].ToString());
-                return View(miCurso_Tema_Video);
-            }
-            else
-            {
-                return View("ERROR");
-            }
+            return View(RepoCursoTemaVideo.obtenerCurso_Tema_Video(id));
         }
 
         [HttpPost]
         public ActionResult Edit(int id, Curso_Tema_Video datos)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdCTV", id));
-            parametros.Add(new SqlParameter("@IdCT", datos.IdCT));
-            parametros.Add(new SqlParameter("@IdVideo", datos.IdVideo));
-
-            BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_Actualizar", CommandType.StoredProcedure, parametros);
+            datos.IdCTV = id;
+            RepoCursoTemaVideo.actualizarCurso_Tema_Video(datos);
             return RedirectToAction("ConsultarTodo");
         }
         public ActionResult Create()
@@ -123,12 +64,7 @@ namespace MVCLaboratorio.Controllers
         [HttpPost]
         public ActionResult Create(int IdCT, int IdVideo)
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdCT", IdCT));
-            parametros.Add(new SqlParameter("@IdVideo", IdVideo));
-
-            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_Insertar", CommandType.StoredProcedure, parametros);
-
+            RepoCursoTemaVideo.insertarCurso_Tema_Video(IdCT, IdVideo);
             return RedirectToAction("ConsultarTodo");
         }
     }
