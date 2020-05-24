@@ -62,7 +62,7 @@ namespace MVCLaboratorio.Models
             DataTable dtCursoTema = BaseHelper.ejecutarConsulta("sp_CursoTema_Insertar", CommandType.StoredProcedure, parametros);
         }
 
-        public void elimnarCursoTema(int IdCT)
+        public void eliminarCursoTema(int IdCT)
         {
             List<SqlParameter> parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@IdCT", IdCT));
