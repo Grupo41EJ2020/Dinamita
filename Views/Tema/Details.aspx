@@ -8,7 +8,7 @@
 </head>
 <body>
     <fieldset>
-        <legend>DATOS</legend>
+        <legend>Datos generales</legend>
         
         <div class="display-label">IdTema</div>
         <div class="display-field"><%: Model.IdTema %></div>

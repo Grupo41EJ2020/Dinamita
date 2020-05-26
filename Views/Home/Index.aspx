@@ -19,6 +19,8 @@
      <a href="/Curso_Tema_Video/ConsultarTodo">Curso_Tema_Video</a>
      <br />
      <a href="/Curso/Index">Curso</a>
+     <br />
+     <a href="/Video/Index">Video</a>
      
     
    

@@ -11,7 +11,7 @@
         <%: Html.ValidationSummary(true) %>
 
         <fieldset>
-            <legend>Datos </legend>
+            <legend>Dato a insertar </legend>
             
             
             <div class="editor-label">
