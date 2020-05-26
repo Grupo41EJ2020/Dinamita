@@ -30,10 +30,10 @@ namespace MVCLaboratorio.Models
             return lstCursoTema;
         }
 
-        public CursoTema obtenerCursoTema(int IdCursoTema)
+        public CursoTema obtenerCursoTema(int IdCT)
         {
             List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdCursoTema", IdCursoTema));
+            parametros.Add(new SqlParameter("@IdCT", IdCT));
 
             DataTable dtCursoTema = BaseHelper.ejecutarConsulta("sp_CursoTema_ConsultarPorID", CommandType.StoredProcedure, parametros);
 
