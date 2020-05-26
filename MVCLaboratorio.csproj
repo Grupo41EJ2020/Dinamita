@@ -94,6 +94,7 @@
     <Compile Include="Utilerias\BaseHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bgLista.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Curso\Create.aspx" />
@@ -101,6 +102,7 @@
     <Content Include="Views\Curso\Details.aspx" />
     <Content Include="Views\Curso\Edit.aspx" />
     <Content Include="Views\Curso\Index.aspx" />
+    <Content Include="Views\Curso_Tema\Index.aspx" />
     <Content Include="Views\Curso_Tema_Video\ConsultarTodo.aspx" />
     <Content Include="Views\Curso_Tema_Video\Create.aspx" />
     <Content Include="Views\Curso_Tema_Video\Delete.aspx" />

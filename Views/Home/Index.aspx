@@ -14,6 +14,8 @@
     <br />
      <a href="/Tema/Index">Temas</a>
      <br />
+    <a href="/Curso_Tema/Index">Curso_Tema</a>
+    <br />
      <a href="/Curso_Tema_Video/ConsultarTodo">Curso_Tema_Video</a>
      <br />
      <a href="/Curso/Index">Curso</a>
