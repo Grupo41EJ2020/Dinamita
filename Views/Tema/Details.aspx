@@ -5,21 +5,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Details</title>
+    <style type="text/css">
+        .style1
+        {
+            font-family: Century Gothic;
+            font-size: 20pt;
+        }
+        .style2
+        {
+            font-size: Century Gothic;
+        }
+        .style3
+        {
+            font-size: large;
+        }
+    </style>
 </head>
 <body>
     <fieldset>
-        <legend>Datos generales</legend>
+        <legend class="style1" style="text-align: center"><strong>Datos Tema<br />
+            </strong></legend>
         
-        <div class="display-label">IdTema</div>
+        <div class="style2"><strong>Id Tema</strong></div>
         <div class="display-field"><%: Model.IdTema %></div>
         
-        <div class="display-label">Nombre</div>
+        <div class="style2"><strong>Nombre</strong></div>
         <div class="display-field"><%: Model.Nombre %></div>
         
     </fieldset>
     <p>
-        <%: Html.ActionLink("Editar", "Edit", new { id = Model.IdTema })%> |
+        <strong><span class="style3">
+        <%: Html.ActionLink("Editar", "Edit", new { id = Model.IdTema })%> 
+        </span></strong>
+        <strong><span class="style3">
         <%: Html.ActionLink("Regresar", "Index") %>
+        </span></strong>
     </p>
 
 </body>

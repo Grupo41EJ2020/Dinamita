@@ -7,21 +7,25 @@
     <title>Delete</title>
 </head>
 <body>
-    <h3>Esta seguro de eliminar este tema?</h3>
+    <h3 class="style2">Esta seguro de eliminar este tema?</h3>
     <fieldset>
-        <legend>Datos</legend>
+        <legend class="style1" style="text-align: center"><strong>Datos generales<br />
+         </strong></legend>
         
-        <div class="display-label">IdTema</div>
+        <div class="style2"><strong>Id Tema</strong></div>
         <div class="display-field"><%: Model.IdTema %></div>
         
-        <div class="display-label">Nombre</div>
+       <div class="style2"><strong>Nombre</strong></div>
         <div class="display-field"><%: Model.Nombre %></div>
         
     </fieldset>
     <% using (Html.BeginForm()) { %>
         <p>
-		    <input type="submit" value="Borrar" /> |
+		    <strong><span class="style3">
+		    <input type="submit" value="Borrar" /> 
+            
 		    <%: Html.ActionLink("Regresar", "Index") %>
+             </span></strong> 
         </p>
     <% } %>
 
