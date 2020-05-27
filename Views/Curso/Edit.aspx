@@ -12,14 +12,7 @@
         
         <fieldset>
             <legend>Datos de Curso</legend>
-            
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.IdCurso) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.IdCurso) %>
-                <%: Html.ValidationMessageFor(model => model.IdCurso) %>
-            </div>
+           
             
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.Descripcion) %>
