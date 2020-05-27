@@ -5,18 +5,77 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Consultar Empleados</title>
+    <style type="text/css">
+        .style1
+        {
+            width: 333px;
+        }
+        .style6
+        {
+            color: #FFFFFF;
+            font-family: Verdana;
+            font-size: 50pt;
+        }
+        .style7
+        {
+            width: 333px;
+            height: 22px;
+            font-size: x-large;
+            font-weight: 700;
+        }
+        .style10
+        {
+            font-size: large;
+        }
+        .style11
+        {
+            width: 90px;
+            font-size: x-large;
+        }
+        .style12
+        {
+            width: 90px;
+            height: 22px;
+            font-size: x-large;
+        }
+        .style13
+        {
+            width: 129px;
+            font-size: x-large;
+        }
+        .style14
+        {
+            width: 129px;
+            height: 22px;
+            font-size: x-large;
+        }
+        .style15
+        {
+            width: 127px;
+            font-size: x-large;
+        }
+        .style16
+        {
+            width: 127px;
+            height: 22px;
+            font-size: x-large;
+        }
+    </style>
 </head>
-<body>
-    <table>
+<body bgcolor="White" background="../../Content/emp.index.jpg" />
+
+<h1 style="text-align: center" class="style6">LISTA DE EMPLEADOS</h1>
+
+    <table align="center" style="border: medium groove #FFFFFF; font-family: Verdana; color: #FFFFFF;">
         <tr>
-            <th></th>
-            <th>
+            <th class="style1"></th>
+            <th class="style10">
                 IdEmpleado
             </th>
-            <th>
+            <th class="style10">
                 Nombre
             </th>
-            <th>
+            <th class="style10">
                 Direccion
             </th>
         </tr>
@@ -24,18 +83,18 @@
     <% foreach (var item in Model) { %>
     
         <tr>
-            <td>
+            <td class="style10">
                 <%: Html.ActionLink("Editar", "Edit", new { id=item.IdEmpleado }) %> |
                 <%: Html.ActionLink("Ver Detalles", "Details", new {id=item.IdEmpleado })%> |
                 <%: Html.ActionLink("Borrar", "Delete", new {id=item.IdEmpleado })%>
             </td>
-            <td>
+            <td class="style10">
                 <%: item.IdEmpleado %>
             </td>
-            <td>
+            <td class="style10">
                 <%: item.Nombre %>
             </td>
-            <td>
+            <td class="style10">
                 <%: item.Direccion %>
             </td>
         </tr>
@@ -44,8 +103,12 @@
 
     </table>
 
-    <p>
+    <p style="font-family: Verdana; font-size: medium; font-weight: bold">
+        <span class="style10">
         <%: Html.ActionLink("Crear Nuevo Empleado", "Create") %>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <a href="/Home/Index"><span class="style10">Regresar a la Lista</span></a>
     </p>
 
 </body>
