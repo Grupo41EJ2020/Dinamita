@@ -30,7 +30,9 @@
 
         <fieldset>
             <legend class="style1" style="text-align: center"><strong>Datos a insertar<br /></strong></legend>
+
             <div class="style3"><strong>Nombre</strong></div>
+
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Nombre) %>
                 <%: Html.ValidationMessageFor(model => model.Nombre) %>

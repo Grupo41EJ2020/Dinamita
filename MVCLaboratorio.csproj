@@ -106,6 +106,9 @@
     <Content Include="Content\bgLista.jpg" />
     <Content Include="Content\bgUpdate.jpg" />
     <Content Include="Content\emp.index.jpg" />
+    <Content Include="Content\inicio1.gif" />
+    <Content Include="Content\tcv.jpg" />
+    <Content Include="Content\tcv2.jpg" />
     <Content Include="Content\TV.jpg" />
     <Content Include="Content\TV2.jpg" />
     <Content Include="Content\TV3.jpg" />

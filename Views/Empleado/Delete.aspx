@@ -9,7 +9,7 @@
 <body>
     <h3>¿Seguro que quiere eliminar la siguiente información?</h3>
     <fieldset>
-        <legend>Fields</legend>
+        <legend>Datos Empleado</legend>
         
         <div class="display-label">IdEmpleado</div>
         <div class="display-field"><%: Model.IdEmpleado %></div>
