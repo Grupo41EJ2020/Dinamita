@@ -116,11 +116,11 @@
     <Content Include="Content\6.gif" />
     <Content Include="Content\7.gif" />
     <Content Include="Content\8.gif" />
-<<<<<<< HEAD
+
     <Content Include="Content\9.gif" />
-=======
+
     <Content Include="Content\bgCreate.jpg" />
->>>>>>> 8017117cf8e35545ce758c09f5aed1d95f573007
+
     <Content Include="Content\bgDelete.jpg" />
     <Content Include="Content\bgDetails.jpg" />
     <Content Include="Content\bgLista.jpg" />
