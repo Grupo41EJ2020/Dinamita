@@ -62,12 +62,12 @@
         }
     </style>
 </head>
-<body bgcolor="White" background="../../Content/2.jpg">
+<body bgcolor="White" background="../../Content/7.gif">
     <h1 style="text-align: center" class="style6">LISTA DE CURSOS</h1>
 
     <table align="center"
         
-        style="border: medium groove #FFFFFF; font-family: Verdana; color: #FFFFFF; width: 1113px; text-align:center">
+        style="border: medium groove #FFFFFF; font-family: Verdana; color: black; width: 1113px; text-align:center; background: white">
         <tr>
             <th class="style1"></th>
             <th class="style11" >
