@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Create</title>
-     <style type="text/css">
+      <style type="text/css">
         .style1
         {
             font-family: Century Gothic;
@@ -24,7 +24,7 @@
         
     </style>
 </head>
-<body>
+<body bgcolor="White" background="../../Content/TV2.jpg">
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
 
