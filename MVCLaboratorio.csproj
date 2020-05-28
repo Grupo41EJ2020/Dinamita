@@ -100,9 +100,11 @@
   <ItemGroup>
     <Content Include="Content\2.jpg" />
     <Content Include="Content\8.gif" />
+    <Content Include="Content\bgCreate.jpg" />
     <Content Include="Content\bgDelete.jpg" />
     <Content Include="Content\bgDetails.jpg" />
     <Content Include="Content\bgLista.jpg" />
+    <Content Include="Content\bgUpdate.jpg" />
     <Content Include="Content\emp.index.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -111,8 +113,10 @@
     <Content Include="Views\Curso\Details.aspx" />
     <Content Include="Views\Curso\Edit.aspx" />
     <Content Include="Views\Curso\Index.aspx" />
+    <Content Include="Views\Curso_Tema\Create.aspx" />
     <Content Include="Views\Curso_Tema\Delete.aspx" />
     <Content Include="Views\Curso_Tema\Details.aspx" />
+    <Content Include="Views\Curso_Tema\Edit.aspx" />
     <Content Include="Views\Curso_Tema\Index.aspx" />
     <Content Include="Views\Curso_Tema_Video\ConsultarTodo.aspx" />
     <Content Include="Views\Curso_Tema_Video\Create.aspx" />

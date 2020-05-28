@@ -8,7 +8,7 @@
     <style type="text/css">
         .style1
         {
-            width: 333px;
+            width: 497px;
         }
         .style6
         {
@@ -18,7 +18,7 @@
         }
         .style7
         {
-            width: 333px;
+            width: 497px;
             height: 22px;
             font-size: x-large;
             font-weight: 700;
@@ -63,7 +63,7 @@
     </style>
 </head>
 <body bgcolor="White" background="../../Content/bgLista.jpg">
-    <h1 style="text-align: center" class="style6">LISTA DE CURSO VIDEO</h1>
+    <h1 style="text-align: center" class="style6">LISTA DE TEMA CURSO</h1>
 
     <p style="font-family: Verdana; font-size: medium; font-weight: bold">
         <span class="style10">
@@ -93,9 +93,9 @@
     
         <tr>
             <td class="style7">
-                <%: Html.ActionLink("Edit", "Edit", new { id=item.IdCT }) %> |
-                <%: Html.ActionLink("Details", "Details", new {id=item.IdCT })%> |
-                <%: Html.ActionLink("Delete", "Delete", new { id=item.IdCT })%>
+                <%: Html.ActionLink("Editar", "Edit", new { id=item.IdCT }) %> |
+                <%: Html.ActionLink("Detalles", "Details", new {id=item.IdCT })%> |
+                <%: Html.ActionLink("Eliminar", "Delete", new { id=item.IdCT })%>
             </td>
             <td class="style12">
                 <%: item.IdCT %>
