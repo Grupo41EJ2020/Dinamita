@@ -106,7 +106,9 @@
     <Content Include="Content\bgLista.jpg" />
     <Content Include="Content\bgUpdate.jpg" />
     <Content Include="Content\emp.index.jpg" />
+    <Content Include="Content\fondo.jpg" />
     <Content Include="Content\inicio1.gif" />
+    <Content Include="Content\logo-facpya.png" />
     <Content Include="Content\tcv.jpg" />
     <Content Include="Content\tcv2.jpg" />
     <Content Include="Content\TV.jpg" />

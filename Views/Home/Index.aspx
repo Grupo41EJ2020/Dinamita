@@ -5,81 +5,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Pia Desarrollo de Software</title>
-     <style type="text/css">
-        .style1
-        {
-            width: 333px;
-        }
-        .style6
-        {
-            
-            font-family: Verdana;
-            font-size: 50pt;
-        }
-        .style7
-        {
-            
-            width: 333px;
-            height: 22px;
-            font-size: x-large;
-            font-weight: 700;
-        }
-        .style10
-        {
-            font-size: large;
-        }
-        .style11
-        {
-            width: 90px;
-            font-size: x-large;
-        }
-        .style12
-        {
-            width: 90px;
-            height: 22px;
-            font-size: x-large;
-        }
-        .style13
-        {
-            width: 129px;
-            font-size: x-large;
-        }
-        .style14
-        {
-            width: 129px;
-            height: 22px;
-            font-size: x-large;
-        }
-        .style15
-        {
-            width: 127px;
-            font-size: x-large;
-        }
-        .style16
-        {
-            width: 127px;
-            height: 22px;
-            font-size: x-large;
-        }
+    <style type="text/css">
+    html, body
+    {
+    width: 100%;
+    height: 110%; 
+    background: #FFFFFF;
+    font-family: Century Gothic; 
+    }
+    a:link, a:visited{
+    text-decoration: none;
+    padding: 20px;
+    font-family: Century Gothic;
+    text-transform: uppercase;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 200;
+    font-size: 25px;
+    color: black;
+    width:250px;
+    height:25px;
+    text-align:center;
+    display: inline-block;
+    margin: 20px 20px 0 20px;
+    background-color: #c1f4f6;
+    }
+    a:hover{
+    color: #dbe9ea;
+    background-color:#dbe9ea;
+    text-decoration: none;
+    }           
+    
     </style>
 </head>
-<body bgcolor="White" background="../../Content/inicio1.gif" />
-    <h1 style= "text-align:center" class= "style6"> Bienvenidos al PIA del equipo DINAMITA</h1>
-    <h2 style= "text-aligin:center" class= "style7">    PIA 👍 </h2>
-
-    <a href="/Empleado/Index"><span class="style11" >Empleado</span></a>
+<body >
+<center>
+    <img src="../../Content/logo-facpya.png" />
+    </center>
+    <h1 style= "text-align:center" class= "style6"> Bienvenidos al Producto Integrador de Aprendizaje del equipo DINAMITA</h1>
+    <center>
+    <a href="/Empleado/Index">Empleado</a>
     <br />
-     <a href="/Tema/Index"><span class="style11" >Temas</span></a>
+     <a href="/Tema/Index">Temas</a>
      <br />
-    <a href="/Curso_Tema/Index"><span class="style11" >Curso_Tema</span></a>
+     <a href="/Curso/Index">Curso</a>
+     <br />
+     <a href="/Video/Index">Video</a>
+     <br>
+      <a href="/Curso_Tema/Index">Curso_Tema</a>
     <br />
-     <a href="/Curso_Tema_Video/ConsultarTodo"><span class="style11" >Curso_Tema_Video</span></a>
+     <a href="/Curso_Tema_Video/ConsultarTodo">Curso_Tema_Video</a>
      <br />
-     <a href="/Curso/Index"><span class="style11" >Curso</span></a>
-     <br />
-     <a href="/Video/Index"><span class="style11" >Video</span></a>
      
-    
+    </center>
    
   
 </body>
