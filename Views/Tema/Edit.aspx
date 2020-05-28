@@ -21,7 +21,7 @@
         }
     </style>
 </head>
-<body>
+<body bgcolor="White" background="../../Content/TV2.jpg">
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
         

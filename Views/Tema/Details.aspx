@@ -8,36 +8,35 @@
     <style type="text/css">
         .style1
         {
-            font-family: Century Gothic;
-            font-size: 20pt;
+             font-family: Century Gothic;
+            font-size: 20px;
+            
         }
         .style2
         {
-            font-size: Century Gothic;
+             font-family: Century Gothic;
+            font-size: 15px;
         }
-        .style3
-        {
-            font-size: large;
-        }
+        
     </style>
 </head>
-<body>
+<body bgcolor="White" background="../../Content/TV2.jpg">
     <fieldset>
         <legend class="style1" style="text-align: center"><strong>Datos Tema<br />
             </strong></legend>
         
-        <div class="style2"><strong>Id Tema</strong></div>
-        <div class="display-field"><%: Model.IdTema %></div>
+        <div class="style1"><strong>Id Tema</strong></div>
+        <div class="style2"><%: Model.IdTema %></div>
         
-        <div class="style2"><strong>Nombre</strong></div>
-        <div class="display-field"><%: Model.Nombre %></div>
+        <div class="style1"><strong>Nombre</strong></div>
+        <div class="style2"><%: Model.Nombre %></div>
         
     </fieldset>
     <p>
-        <strong><span class="style3">
+        <strong><span class="style1">
         <%: Html.ActionLink("Editar", "Edit", new { id = Model.IdTema })%> 
         </span></strong>
-        <strong><span class="style3">
+        <strong><span class="style1">
         <%: Html.ActionLink("Regresar", "Index") %>
         </span></strong>
     </p>

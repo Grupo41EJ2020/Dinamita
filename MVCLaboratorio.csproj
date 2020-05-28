@@ -116,10 +116,25 @@
     <Content Include="Content\6.gif" />
     <Content Include="Content\7.gif" />
     <Content Include="Content\8.gif" />
+<<<<<<< HEAD
     <Content Include="Content\9.gif" />
+=======
+    <Content Include="Content\bgCreate.jpg" />
+>>>>>>> 8017117cf8e35545ce758c09f5aed1d95f573007
     <Content Include="Content\bgDelete.jpg" />
     <Content Include="Content\bgDetails.jpg" />
     <Content Include="Content\bgLista.jpg" />
+    <Content Include="Content\bgUpdate.jpg" />
+    <Content Include="Content\emp.index.jpg" />
+    <Content Include="Content\fondo.jpg" />
+    <Content Include="Content\inicio1.gif" />
+    <Content Include="Content\logo-facpya.png" />
+    <Content Include="Content\tcv.jpg" />
+    <Content Include="Content\tcv2.jpg" />
+    <Content Include="Content\TV.jpg" />
+    <Content Include="Content\TV2.jpg" />
+    <Content Include="Content\TV3.jpg" />
+    <Content Include="Content\untitled.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Curso\Create.aspx" />
@@ -127,8 +142,10 @@
     <Content Include="Views\Curso\Details.aspx" />
     <Content Include="Views\Curso\Edit.aspx" />
     <Content Include="Views\Curso\Index.aspx" />
+    <Content Include="Views\Curso_Tema\Create.aspx" />
     <Content Include="Views\Curso_Tema\Delete.aspx" />
     <Content Include="Views\Curso_Tema\Details.aspx" />
+    <Content Include="Views\Curso_Tema\Edit.aspx" />
     <Content Include="Views\Curso_Tema\Index.aspx" />
     <Content Include="Views\Curso_Tema_Video\ConsultarTodo.aspx" />
     <Content Include="Views\Curso_Tema_Video\Create.aspx" />

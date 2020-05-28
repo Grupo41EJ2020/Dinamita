@@ -57,12 +57,19 @@
         }
     </style>
 </head>
+<<<<<<< HEAD
 <body background="../../Content/3.gif">
     <h3 style="text-align: center" class="style5">¿Seguro que quiere eliminar la siguiente información?</h3>
     <fieldset style="margin-right: 0px">
         <legend class="style8"><span class="style8">Datos del Empleado</span><br 
                 class="style8" />
         </legend>
+=======
+<body>
+    <h3>¿Seguro que quiere eliminar la siguiente información?</h3>
+    <fieldset>
+        <legend>Datos Empleado</legend>
+>>>>>>> 8017117cf8e35545ce758c09f5aed1d95f573007
         
         <div class="style5">IdEmpleado</div>
         <div class="style4" style= "color:White"><%: Model.IdEmpleado %></div>

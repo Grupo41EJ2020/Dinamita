@@ -5,8 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Delete</title>
+    <style type="text/css">
+        .style1
+        {
+             font-family: Century Gothic;
+            font-size: 20px;
+            
+        }
+        .style2
+        {
+             font-family: Century Gothic;
+            font-size: 15px;
+        }
+        
+    </style>
 </head>
-<body>
+<body bgcolor="White" background="../../Content/TV2.jpg">
     <h3 class="style2">Esta seguro de eliminar este tema?</h3>
     <fieldset>
         <legend class="style1" style="text-align: center"><strong>Datos generales<br />
@@ -21,7 +35,7 @@
     </fieldset>
     <% using (Html.BeginForm()) { %>
         <p>
-		    <strong><span class="style3">
+		    <strong><span class="style2">
 		    <input type="submit" value="Borrar" /> 
             
 		    <%: Html.ActionLink("Regresar", "Index") %>

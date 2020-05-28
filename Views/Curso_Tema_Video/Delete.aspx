@@ -5,26 +5,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Delete</title>
-</head>
-<body>
-    <h3>¿Seguro que desea eliminar la siguiente información?</h3>
-    <fieldset>
-        <legend>Fields</legend>
+     <style type="text/css">
+        .style1
+        {
+             font-family: Century Gothic;
+            font-size: 20px;
+            
+        }
+        .style2
+        {
+             font-family: Century Gothic;
+            font-size: 15px;
+        }
         
-        <div class="display-label">IdCTV</div>
+    </style>
+</head>
+<body bgcolor="White" background="../../Content/tcv2.jpg" />
+    <h3 class="style2">¿Seguro que desea eliminar la siguiente información?</h3>
+    <fieldset>
+        <legend class="style1" style="text-align: center"><strong>Datos</strong></legend>
+        
+        <div class="style2"><strong>IdCTV</strong></div>
         <div class="display-field"><%: Model.IdCTV %></div>
         
-        <div class="display-label">IdCT</div>
+        <div class="style2"><strong>IdCT</strong></div>
         <div class="display-field"><%: Model.IdCT %></div>
         
-        <div class="display-label">IdVideo</div>
+        <div class="style2"><strong>IdVideo</strong></div>
         <div class="display-field"><%: Model.IdVideo %></div>
         
     </fieldset>
     <% using (Html.BeginForm()) { %>
         <p>
+        <strong><span class="style2">
 		    <input type="submit" value="Eliminar" /> |
+
 		    <%: Html.ActionLink("Regresar a la Lista", "ConsultarTodo") %>
+            </span></strong> 
         </p>
     <% } %>
 

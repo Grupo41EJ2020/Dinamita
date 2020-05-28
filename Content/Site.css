@@ -26,3 +26,11 @@
 {
     display: none;
 }
+
+th {
+  text-align: left;
+}
+
+table {
+  border-spacing: 5px;
+}
